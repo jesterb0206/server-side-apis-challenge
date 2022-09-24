@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'ModeNine';
+    src: url('ModeNine.woff') format('woff'),
+    url('ModeNine.ttf') format('truetype');
+}
+
 header {
     background: #e0e0e0;
     padding-top: 1vh;
@@ -24,7 +30,7 @@ body {
 
 .engraved {
     font-size: 4vh;
-    font-family: 'ModeNine', sans-serif;
+    font-family: 'ModeNine';
     background-color: #5a5a5a;
     -webkit-background-clip: text;
     -moz-background-clip: text;
