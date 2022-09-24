@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'ModeNine';
+    font-style: normal;
+    font-weight: normal;
+    src: local('ModeNine'), url('MODENINE.woff') format('woff');
+    }
+  
+  header {
+    background: #e0e0e0;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  
+  body {
+    background: #e0e0e0;
+  }
+  
+  
+  .neumorphism {
+    align-items: center;
+    background: #e0e0e0;
+    border-radius: 50px;
+    box-shadow: inset 5px 5px 10px #5a5a5a,
+    inset -5px -5px 10px #ffffff;
+    display: flex;
+    height: 8vh;
+    width: calc 98vw;
+    justify-content: center;
+  }
+  
+  .engraved {
+    font-size: 4vh;
+    font-family: 'ModeNine';
+    background-color: #5a5a5a;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: rgba(245, 245, 245, 0.5) -1px 1px 1px;
+  }
