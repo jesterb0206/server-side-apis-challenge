@@ -1,24 +1,18 @@
-@font-face {
-    font-family: 'ModeNine';
-    font-style: normal;
-    font-weight: normal;
-    src: local('ModeNine'), url('MODENINE.woff') format('woff');
-    }
-  
-  header {
+@import url('http://fonts.cdnfonts.com/css/modenine');
+
+header {
     background: #e0e0e0;
     padding-top: 1vh;
     padding-bottom: 1vh;
     padding-left: 1vw;
     padding-right: 1vw;
-  }
-  
-  body {
+}
+
+body {
     background: #e0e0e0;
-  }
-  
-  
-  .neumorphism {
+}
+
+.neumorphism {
     align-items: center;
     background: #e0e0e0;
     border-radius: 50px;
@@ -28,15 +22,15 @@
     height: 8vh;
     width: calc 98vw;
     justify-content: center;
-  }
-  
-  .engraved {
+}
+
+.engraved {
     font-size: 4vh;
-    font-family: 'ModeNine';
+    font-family: 'ModeNine', sans-serif;
     background-color: #5a5a5a;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
     color: transparent;
     text-shadow: rgba(245, 245, 245, 0.5) -1px 1px 1px;
-  }
+}
