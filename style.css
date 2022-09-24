@@ -1,9 +1,3 @@
-@font-face {
-    font-family: 'ModeNine';
-    src: url('ModeNine.woff') format('woff'),
-    url('ModeNine.ttf') format('truetype');
-}
-
 header {
     background: #e0e0e0;
     padding-top: 1vh;
@@ -30,11 +24,12 @@ body {
 
 .engraved {
     font-size: 4vh;
-    font-family: 'ModeNine';
+    font-family: 'Radio Canada', sans-serif;
+    font-weight: 600;
     background-color: #5a5a5a;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
     color: transparent;
-    text-shadow: rgba(245, 245, 245, 0.5) -1px 1px 1px;
+    text-shadow: rgba(245, 245, 245, 0.5) -2px 2px 1px;
 }
