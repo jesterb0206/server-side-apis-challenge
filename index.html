@@ -18,6 +18,46 @@
       </div>
     </header>
 
+    <main>
+
+        <div class="wrapper">
+            <div class="container">
+                <aside class="citySearch">
+                    <div id="outerDivWrapper">
+                        <div id="outerDiv">
+                            <div class="vertical-scroll" id="scrollableContent">
+                                <input class="searchBar" id ="enter" placeholder="Enter a City" />
+                                <!-- <span class="blinking-cursor">|</span> -->
+                                <button class="btn">Search</button>
+                                <button class="clear">Clear</button>
+                                <div class="containerTwo">
+                                <div class="searchHist"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>    
+
+        <div class="current">
+            <h1 id="city">City: </h1>
+            <div id="date"></div>
+            <p id="temp">Temperature: </p>
+            <p id="descr">Conditions: </p>
+            <img id="icon" src="" alt="" />
+            <p id="humid">Humidity: </p>
+            <p id="speed">Wind Speed: </p>
+            <p id="uviDiv">UV Index: <span id="uvi"></span></p>
+        </div>
+    
+        <div class="fiveDay"></div>
+
   </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="script.js" defer></script>
 
 </html>
