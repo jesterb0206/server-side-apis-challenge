@@ -142,7 +142,7 @@ var weather = {
 // Event Listeners
 
 // Generate City List Item When Enter Key Is Pressed While In Input Area 
-document.querySelector("#enter").addEventListener("keyup", function (e) {
+document.querySelector(".finder__input").addEventListener("keyup", function (e) {
     if (e.key === 'Enter') {
     weather.search();
     generateListItems();
@@ -181,3 +181,33 @@ const refreshPage = () => {
 }
 
 refreshButton.addEventListener('click', refreshPage)
+
+// Neumorphism Search Bar
+
+const input = document.querySelector(".finder__input");
+const finder = document.querySelector(".finder");
+const form = document.querySelector("form");
+
+input.addEventListener("focus", () => {
+  finder.classList.add("active");
+});
+
+input.addEventListener("blur", () => {
+  if (input.value.length === 0) {
+    finder.classList.remove("active");
+  }
+});
+
+form.addEventListener("submit", (ev) => {
+  ev.preventDefault();
+  finder.classList.add("processing");
+  finder.classList.remove("active");
+  input.disabled = true;
+  setTimeout(() => {
+    finder.classList.remove("processing");
+    input.disabled = false;
+    if (input.value.length > 0) {
+      finder.classList.add("active");
+    }
+  }, 1000);
+});

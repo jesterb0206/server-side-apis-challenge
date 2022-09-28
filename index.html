@@ -26,7 +26,17 @@
                     <div id="outerDivWrapper">
                         <div id="outerDiv">
                             <div class="vertical-scroll" id="scrollableContent">
-                                <input class="searchBar" id ="enter" placeholder="Enter a City" />
+                                <form autocomplete="off">
+                                    <div class="finder">
+                                      <div class="finder__outer">
+                                        <div class="finder__inner">
+                                          <div class="finder__icon" ref="icon"></div>
+                                          <input class="finder__input formText" id="enter" type="text" name="q" placeholder="Enter a City" />
+                                          <!-- <span class="blinking-cursor">|</span> -->
+                                        </div>
+                                      </div>
+                                    </div>
+                                </form>
                                 <!-- <span class="blinking-cursor">|</span> -->
                                 <button class="btn">Search</button>
                                 <button class="clear">Clear</button>
@@ -39,20 +49,34 @@
                 </aside>
             </div>
         </div>
-    </main>    
+    </main>
 
-        <div class="current">
-            <h1 id="city">City: </h1>
-            <div id="date"></div>
-            <p id="temp">Temperature: </p>
-            <p id="descr">Conditions: </p>
-            <img id="icon" src="" alt="" />
-            <p id="humid">Humidity: </p>
-            <p id="speed">Wind Speed: </p>
-            <p id="uviDiv">UV Index: <span id="uvi"></span></p>
+    <main id="currentForecast">
+
+        <div class="wrapper">
+            <div class="container">
+                    <div id="outerDivWrapper">
+                        <div id="outerDiv">
+                            <div class="vertical-scroll" id="scrollableContent">
+                                <div class="current">
+                                    <h1 id="city">City: </h1>
+                                    <div id="date"></div>
+                                    <p id="temp">Temperature: </p>
+                                    <p id="descr">Conditions: </p>
+                                    <img id="icon" src="" alt="" />
+                                    <p id="humid">Humidity: </p>
+                                    <p id="speed">Wind Speed: </p>
+                                    <p id="uviDiv">UV Index: <span id="uvi"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>             
         </div>
-    
+
         <div class="fiveDay"></div>
+
+    </main>    
 
   </body>
 
