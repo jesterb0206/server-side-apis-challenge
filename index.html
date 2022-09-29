@@ -13,9 +13,9 @@
   <body>
 
     <header>
-      <div class= "neumorphism">
-        <span class="engraved"> Weather Dashboard </span>
-      </div>
+        <div class= "neumorphism">
+            <span class="engraved"> Weather Dashboard </span>
+        </div>
     </header>
 
     <main>
@@ -31,13 +31,12 @@
                                       <div class="finder__outer">
                                         <div class="finder__inner">
                                           <div class="finder__icon" ref="icon"></div>
-                                          <input class="finder__input formText" id="enter" type="text" name="q" placeholder="Enter a City" />
+                                          <input class="finder__input formText searchBar" id="enter" type="text" name="q" placeholder="Enter a City" />
                                           <!-- <span class="blinking-cursor">|</span> -->
                                         </div>
                                       </div>
                                     </div>
                                 </form>
-                                <!-- <span class="blinking-cursor">|</span> -->
                                 <button class="btn">Search</button>
                                 <button class="clear">Clear</button>
                                 <div class="containerTwo">
@@ -53,28 +52,51 @@
 
     <main id="currentForecast">
 
+            <div class= "neumorphism margins">
+                <span class="engraved"> Current Forecast </span>
+            </div>
+
         <div class="wrapper">
             <div class="container">
-                    <div id="outerDivWrapper">
-                        <div id="outerDiv">
-                            <div class="vertical-scroll" id="scrollableContent">
-                                <div class="current">
-                                    <h1 id="city">City: </h1>
-                                    <div id="date"></div>
-                                    <p id="temp">Temperature: </p>
-                                    <p id="descr">Conditions: </p>
-                                    <img id="icon" src="" alt="" />
-                                    <p id="humid">Humidity: </p>
-                                    <p id="speed">Wind Speed: </p>
-                                    <p id="uviDiv">UV Index: <span id="uvi"></span></p>
+                <div id="outerDivWrapper">
+                    <div id="outerDiv">
+                        <div class="vertical-scroll" id="scrollableContent">
+                            <div class="current">
+                                <h1 id="city">City: </h1>
+                                <div id="date"></div>
+                                <p id="temp">Temperature: </p>
+                                <p id="descr">Conditions: </p>
+                                <div class="iconMargins">
+                                    <img class ="iconDescr2" id="icon" src="" alt="" />
                                 </div>
+                                <p id="humid">Humidity: </p>
+                                <p id="speed">Wind Speed: </p>
+                                <p id="uviDiv">UV Index: <span id="uvi"></span></p>
                             </div>
                         </div>
                     </div>
+                </div>
             </div>             
         </div>
 
-        <div class="fiveDay"></div>
+        <div class="margins2">
+            <div class= "neumorphism">
+                <span class="engraved"> 5 Day Forecast </span>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="container">
+                <div id="outerDivWrapper">
+                    <div id="outerDiv">
+                        <div class="vertical-scroll" id="scrollableContent">
+                            <div class="fiveDay">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>             
+        </div>
 
     </main>    
 

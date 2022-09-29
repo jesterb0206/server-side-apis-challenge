@@ -124,15 +124,14 @@ var weather = {
         day.innerHTML = "";
         for (var i = 1; i < 6; i++) {
             console.log(moment(data.daily[i].dt,"X").format("MMMM Do, YYYY"));
-            day.innerHTML += `<div class="day1 w-1/4  m-2 card">
-            <div id="fiveDate">${moment(data.daily[i].dt,"X").format("MMMM Do YYYY")}</div>
-            <h2 id="temp">${data.daily[i].temp.day}°</h2>
-            <div class="flex">
+            day.innerHTML += 
+        `<div>
+            <div id="date2">${moment(data.daily[i].dt,"X").format("MMMM Do, YYYY")}</div>
+            <h2 id="temp">${data.daily[i].temp.day}°F</h2>
                 <p class="iconDescr" id="descr">${data.daily[i].weather[0].description}
-                <img class="iconDescr" id="icon" src="https://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}.png" alt=""></p>
-            </div>
+                <img class="iconDescr2" id="icon" src="https://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}.png" alt=""></p>
             <p id="humid">Humidity: ${data.daily[i].humidity}%</p>
-            <p id="speed">Wind Speed: ${data.daily[i].wind_speed} mph</p>
+            <p id="speed">Wind Speed: ${data.daily[i].wind_speed} MPH</p>
         </div>`
         }
         
@@ -142,8 +141,8 @@ var weather = {
 // Event Listeners
 
 // Generate City List Item When Enter Key Is Pressed While In Input Area 
-document.querySelector(".finder__input").addEventListener("keyup", function (e) {
-    if (e.key === 'Enter') {
+document.querySelector(".searchBar").addEventListener("keyup", function (event) {
+    if (event.key === "Enter") {
     weather.search();
     generateListItems();
     }
