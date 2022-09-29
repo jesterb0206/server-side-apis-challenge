@@ -1,15 +1,18 @@
-// Current Date
+// Moment.js Date
+
 var dateEl = document.getElementById("date");
 dateEl.innerText = moment().format("MMMM Do, YYYY");
 
-// Create An Array of Cities
+// Generate City Array
+
 var cityArr = []
 if (localStorage.getItem("Cities")) {
     cityArr = JSON.parse(localStorage.getItem("Cities"))
 }
 
+// Generate List Items
+
 var appendImm = function () {
-    // loop through cities and create list items
     function generateListItems (cityArr) {
         var cities = "";
         for (let i = 0; i < cityArr.length; i++) {
@@ -18,7 +21,8 @@ var appendImm = function () {
         return cities;
     } 
 
-    // generateListItems(cityArr) and put it in unordered list
+// Put List Items In An Unordered List
+
     document.querySelector(".searchHist").innerHTML = `
     <ul>
     ${generateListItems(cityArr)}
@@ -26,31 +30,31 @@ var appendImm = function () {
     `;
 
 var items = $('.prevCities > ul').get();
-items.sort(function(a,b){
-  var keyA = $(a).text();
-  var keyB = $(b).text();
+    items.sort(function(a,b){
+        var keyA = $(a).text();
+        var keyB = $(b).text();
 
-  if (keyA < keyB) return -1;
-  if (keyA > keyB) return 1;
-  return 0;
-});
-var ul = $('.prevCities');
-$.each(items, function(i, ul){
-  ul.append(li); /* This removes li from the old spot and moves it */
-});
-
-
-    console.log("before on click")
-    // add Event Listener to search hist
-    var searchCities = $(".prevCities")
-    searchCities.on("click", function() {
-        console.log("clicked", searchCities)
-        var cityName = $(this).text()
-        weather.fetchWeather(cityName)
+        if (keyA < keyB) return -1;
+        if (keyA > keyB) return 1;
+        return 0;
     });
+
+var ul = $('.prevCities');
+    $.each(items, function(i, ul){
+        ul.append(li);
+    });
+
+// Search History Event Listener
+
+var searchCities = $(".prevCities")
+    searchCities.on("click", function() {
+            console.log("clicked", searchCities)
+            var cityName = $(this).text()
+            weather.fetchWeather(cityName)
+        });
 };
 
-// fetch and display functions for all weather
+// Fetch And Display Current Weather Data
 var weather = {
     "apiKey": "f06df96322709f9b0254307f0735bb9c",
     fetchWeather: function (city) {
@@ -61,7 +65,6 @@ var weather = {
         )
         .then((response) => response.json())
         .then((data) => this.displayWeather(data));
-
     },
 
     fetchUVI: function (data) {
@@ -98,6 +101,7 @@ var weather = {
         document.getElementById("speed").innerText = "Wind Speed: " + speed + " MPH";
         this.fetchUVI(data)
     },
+
     search: function () {
         this.fetchWeather(document.querySelector(".searchBar").value); 
     },
@@ -106,8 +110,8 @@ var weather = {
         var { uvi } = data.daily[0];
         document.getElementById("uvi").innerText = uvi;
 
+// Color Coded Based On UV Index
 
-        // color code based on uv index
         if ( uvi > 0 && uvi < 5) {
             document.getElementById("uvi").setAttribute('style', "background-color: rgba(0, 128, 0, 0.419);");
         } else if (uvi > 5 && uvi < 7) {
@@ -118,6 +122,7 @@ var weather = {
     },
 
 // 5 Day Weather For Loop
+
     fiveDay: function (data) {
         var day = document.querySelector(".fiveDay");
         
@@ -134,7 +139,6 @@ var weather = {
             <p id="speed">Wind Speed: ${data.daily[i].wind_speed} MPH</p>
         </div>`
         }
-        
     }
 };
 
