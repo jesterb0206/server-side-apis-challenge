@@ -74,7 +74,7 @@ main {
     height: 5vh;
     padding-top: 1vh;
     padding-bottom: 1vh;
-    margin-top: 26.7vh;
+    margin-top: 4vh;
     margin-bottom: 1vh;
     margin-left: 13.15vw;
 }
@@ -260,71 +260,6 @@ input:focus:-ms-input-placeholder {
     opacity:0;
 }
 
-/* Blinking Cursor */
-
-.blinking-cursor {
-    font-size: 3vh;
-    font-family: 'Radio Canada', sans-serif;
-    font-weight: 600;
-    background-color: #5a5a5a;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: rgba(245, 245, 245, 0.5) -1px 2px 1px;
-    line-height: 3vh;
-    -webkit-animation: 1s blink step-end infinite;
-    -moz-animation: 1s blink step-end infinite;
-    -ms-animation: 1s blink step-end infinite;
-    -o-animation: 1s blink step-end infinite;
-    animation: 1s blink step-end infinite;
-}
-  
-@keyframes blink {
-    from, to {
-      color: white;
-    }
-    50% {
-      color: transparent;
-    }
-}
-  
-@-moz-keyframes blink {
-    from, to {
-      color: white;
-    }
-    50% {
-      color: transparent;
-    }
-}
-  
-@-webkit-keyframes blink {
-    from, to {
-      color: white;
-    }
-    50% {
-      color: transparent;
-    }
-}
-  
-@-ms-keyframes blink {
-    from, to {
-      color: white;
-    }
-    50% {
-      color: transparent;
-    }
-}
-  
-@-o-keyframes blink {
-    from, to {
-      color: transparent;
-    }
-    50% {
-      color: black;
-    }
-}
-
 /* Button Styling */
 
 button {
@@ -378,10 +313,7 @@ button:active {
 
 form {
     transition: all 0.5s;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #eaeaea;
+    margin-right: 4vw;
 }
 
 .finder {
@@ -393,12 +325,12 @@ form {
 
 .finder__outer {
     display: flex;
-    height: 7vh;
-    width: 67vw;
+    height: 11vh;
+    width: 62vw;
     padding-top: 1vh;
     padding-bottom: 1vh;
     border-radius: 10px;
-    margin-top: -23vh;
+    margin-top: 5vh;
     margin-left: 3.645vw;
     justify-content: center;
     align-items: center;
@@ -486,15 +418,6 @@ form {
 
 .active .finder__icon {
     transform: translateY(-5px);
-}
-
-@keyframes spinner {
-    0% {
-      transform: rotateZ(45deg);
-    }
-    100% {
-      transform: rotateZ(405deg);
-    }
 }
 
 .formText {
@@ -611,7 +534,7 @@ form {
 }
 
 .iconDescr2 {
-    background: black;
+    background: transparent;
 }
 
 .margins {
@@ -627,9 +550,17 @@ form {
     margin-left: 5vw;
     padding-top: 3vh;
     padding-bottom: 3vh;
-    padding-left: 28.5vw;
     border-radius: 50px;
     box-shadow: -5px -5px 0.5vh #ffffff, 5px 5px 0.5vh #5a5a5a;
     width: 67vw;
+    cursor: not-allowed;
+    padding-left: 28.5vw;
+}
+
+.margins {
+    cursor: not-allowed;
+}
+
+.margins2 {
     cursor: not-allowed;
 }

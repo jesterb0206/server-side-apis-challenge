@@ -117,7 +117,7 @@ var weather = {
         }
     },
 
-    // for loop for five day weather
+// 5 Day Weather For Loop
     fiveDay: function (data) {
         var day = document.querySelector(".fiveDay");
         
@@ -128,7 +128,7 @@ var weather = {
         `<div>
             <div id="date2">${moment(data.daily[i].dt,"X").format("MMMM Do, YYYY")}</div>
             <h2 id="temp">${data.daily[i].temp.day}°F</h2>
-                <p class="iconDescr" id="descr">${data.daily[i].weather[0].description}
+                <p class="iconDescr3" id="descr">${data.daily[i].weather[0].description}
                 <img class="iconDescr2" id="icon" src="https://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}.png" alt=""></p>
             <p id="humid">Humidity: ${data.daily[i].humidity}%</p>
             <p id="speed">Wind Speed: ${data.daily[i].wind_speed} MPH</p>
@@ -139,14 +139,6 @@ var weather = {
 };
 
 // Event Listeners
-
-// Generate City List Item When Enter Key Is Pressed While In Input Area 
-document.querySelector(".searchBar").addEventListener("keyup", function (event) {
-    if (event.key === "Enter") {
-    weather.search();
-    generateListItems();
-    }
-});
 
 // Generate City List Item When Search Button Is Clicked 
 
@@ -180,33 +172,3 @@ const refreshPage = () => {
 }
 
 refreshButton.addEventListener('click', refreshPage)
-
-// Neumorphism Search Bar
-
-const input = document.querySelector(".finder__input");
-const finder = document.querySelector(".finder");
-const form = document.querySelector("form");
-
-input.addEventListener("focus", () => {
-  finder.classList.add("active");
-});
-
-input.addEventListener("blur", () => {
-  if (input.value.length === 0) {
-    finder.classList.remove("active");
-  }
-});
-
-form.addEventListener("submit", (ev) => {
-  ev.preventDefault();
-  finder.classList.add("processing");
-  finder.classList.remove("active");
-  input.disabled = true;
-  setTimeout(() => {
-    finder.classList.remove("processing");
-    input.disabled = false;
-    if (input.value.length > 0) {
-      finder.classList.add("active");
-    }
-  }, 1000);
-});
